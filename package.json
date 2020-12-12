@@ -1,0 +1,21 @@
+{
+  "name": "instagram-live",
+  "version": "1.0.0",
+  "description": "Instagram Live for OBS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Sean",
+  "license": "MIT",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "request-cookies": "^1.1.0",
+    "socket.io": "^2.3.0",
+    "utf8": "^3.0.0",
+    "uuid": "^3.3.3"
+  }
+}
