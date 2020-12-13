@@ -73,7 +73,7 @@ http.listen(8000, () => {
       "[" +
         new Date().toISOString().replace(/T/, " ").replace(/\..+/, "") +
         "] " +
-        "Open 127.0.0.1:8000"
+        "Open http://127.0.0.1:8000"
     )
   })
 
