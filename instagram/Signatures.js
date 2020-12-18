@@ -1,6 +1,7 @@
 var uuid = require("uuid/v4");
 var crypto = require("crypto");
 const utf8 = require("utf8");
+var lodash = require('lodash')
 
 var constants = require("./Constants");
 
