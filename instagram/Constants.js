@@ -5,9 +5,11 @@ var API_URL = [
 var IG_VERSION = "85.0.0.21.100";
 var IG_SIG_KEY =
   "937463b5272b5d60e9d20f0f8d7d192193dd95095a3ad43725d494300a5ea5fc";
+var userBreadcrumbKey = "iN4$aGr0m";
 
 module.exports = {
   API_URL,
   IG_VERSION,
   IG_SIG_KEY,
+  userBreadcrumbKey,
 };
