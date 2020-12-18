@@ -31,3 +31,19 @@ module.exports.generateDeviceId = function (source) {
       .substring(0, 16)
   );
 };
+
+module.exports.userBreadcrumb = (size)=>{
+  const term = lodash.random(2, 3) * 1000 + size + lodash.random(15, 20) * 1000;
+  const textChangeEventCount = Math.round(size / lodash.random(2, 3)) || 1;
+  const data = `${size} ${term} ${textChangeEventCount} ${Date.now()}`;
+
+  const signature = Buffer.from(
+    crypto
+      .createHmac('sha256', constants.userBreadcrumbKey)
+      .update(data)
+      .digest('hex'),
+  ).toString('base64');
+
+  const body = Buffer.from(data).toString('base64');
+  return `${signature}\n${body}\n`;
+}
