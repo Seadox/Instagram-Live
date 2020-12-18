@@ -1,5 +1,6 @@
 var client = require("../../Client");
 var globals = require("../../Globals");
+var signatures = require('../../Signatures')
 
 create = (previewWidth, previewHeight, broadcastMessage, cb)=>{
     var data = JSON.stringify({
