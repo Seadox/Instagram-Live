@@ -52,9 +52,26 @@ getViewerList = (broadcastId, cb)=>{
     });
 }
 
+comment = (broadcastId, message, cb)=>{
+    var data = JSON.stringify({
+        user_breadcrumb: signatures.userBreadcrumb(message.length),
+        idempotence_token: signatures.generateUUID(true),
+        comment_text: message,
+        live_or_vod: 1,
+        offset_to_video_start: 0,
+        _csrftoken: globals.csrftoken,
+        _uid: globals.username_id,
+        _uuid: globals.uuid
+    });
+
+    client.sendRequest("live/" + broadcastId + "/comment/", data, () => {
+        cb(globals.LastResponse);
+    });
+}
 
 module.exports.create = create;
 module.exports.start = start;
 module.exports.end = end;
 module.exports.getComments = getComments;
 module.exports.getViewerList = getViewerList;
+module.exports.comment = comment;
