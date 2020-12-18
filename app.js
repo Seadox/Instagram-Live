@@ -66,6 +66,12 @@ app.get("/", (req, res) => {
           })
         }
       })
+      
+      socket.on('comment', (data)=>{
+        live.comment(broadcastId, data.comment, ()=>{
+          console.log(globals.LastResponse)
+        });
+      })
   })
 
 http.listen(8000, () => {
