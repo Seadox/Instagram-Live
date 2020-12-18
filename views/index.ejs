@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,24 @@
     <script src="/socket.io/socket.io.js"></script>
     <title>Instagram Live</title>
 </head>
+
 <body>
     <div id="header">
         <div id="logout_btn">
-            <svg width="30px" height="30px" viewBox="0 0 16 16" class="bi bi-power" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path style="fill:#E91916" fill-rule="evenodd" d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z"/>
-                <path style="fill:#E91916" fill-rule="evenodd" d="M7.5 8V1h1v7h-1z"/>
-              </svg>
+            <svg width="30px" height="30px" viewBox="0 0 16 16" class="bi bi-power" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path style="fill:#E91916" fill-rule="evenodd"
+                    d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z" />
+                <path style="fill:#E91916" fill-rule="evenodd" d="M7.5 8V1h1v7h-1z" />
+            </svg>
         </div>
         <div id="views">
             <div id="views_icon">
-                <svg width="20px" height="20px" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path style="fill:rgb(246, 88, 85)" fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                  </svg>
+                <svg width="20px" height="20px" viewBox="0 0 16 16" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path style="fill:rgb(246, 88, 85)" fill-rule="evenodd"
+                        d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                </svg>
             </div>
             <div id="views_count">
                 <span>0</span>
@@ -50,10 +56,19 @@
     </div>
     <div id="chat-container">
         <div class="chat-message-list">
-            <div class="message-row other-message">
+        </div>
+        <div id="chat-form">
+            <input id="chat_box" type="text" placeholder="Search" autofocus />
+            <div id="chat_btn" onclick="send_comment()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" fill="currentColor"
+                    class="bi bi-cursor-fill" viewBox="0 0 16 16">
+                    <path style="fill: #ffffff;" fill-rule="evenodd"
+                        d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+                </svg>
             </div>
         </div>
     </div>
     <script src="/js/script.js"></script>
 </body>
+
 </html>
