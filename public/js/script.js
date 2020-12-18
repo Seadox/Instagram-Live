@@ -9,6 +9,13 @@ document.querySelector('form').addEventListener('submit', (e)=>{
     else    update_error("Please enter username and password")
 })
 
+document.querySelector('#chat_box').addEventListener("keyup", (e)=> {
+    e.preventDefault();
+    if (e.keyCode === 13) {
+        send_comment()
+    }
+});
+
 socket.on('isLoggedIn', (data)=>{
     if(data.status){
         document.querySelector('#_login').remove()
@@ -66,12 +73,24 @@ show_chat = ()=>{
 }
 
 add_comment = (pic, name, text, pk)=>{
-    var comment_html = `<div class="message-content" data-pk="${pk}">
-                            <img src="${pic}" />
-                            <div class="message-name">${name}</div>
-                            <div class="message-text">${text}</div>                  
+    var comment_html = `<div class="message-row other-message">
+                            <div class="message-content" data-pk="${pk}">
+                                <img src="${pic}" />
+                                <div class="message-name">${name}</div>
+                                <div class="message-text">${text}</div>                  
+                            </div>
                         </div>`
-    document.querySelector('.message-row').insertAdjacentHTML('beforeend', comment_html)
+    document.querySelector('.chat-message-list').insertAdjacentHTML('afterbegin', comment_html)
+}
+
+add_question = (pic, name, text, pk)=>{
+    var question_html = `<div class="message-row you-message">
+                            <div class="message-content">
+                                <div class="message-name">${name}</div>
+                                <div class="message-text">${text}</div>
+                            </div>
+                        </div>`
+    document.querySelector('.chat-message-list').insertAdjacentHTML('afterbegin', question_html)
 }
 
 update_views_count = (views)=>{
@@ -82,4 +101,13 @@ update_error = (text)=>{
     var error = document.querySelector('#error')
     error.style = "display: inline;"
     error.innerHTML = text
+}
+
+send_comment = ()=>{
+    var comment = document.querySelector('#chat_box')
+    if(comment.value.length > 0){
+        socket.emit("comment", {comment: comment.value})
+        comment.value = ""
+        comment.focus()
+    }
 }
