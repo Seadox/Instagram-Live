@@ -9,14 +9,14 @@ body {
   font-family: "Concert One";
   font-size: 68px;
   color: #ffffff;
-  display: flex; /* change to flex */
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin: 150px 0 0 0;
 }
 #_login {
-  display: flex; /* change to flex */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
