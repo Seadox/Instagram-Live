@@ -20,7 +20,7 @@ Run InstagramLive.bat
 ### TODO
 
 - [ ] pin comment / unpin comment
-- [ ] send comment
+- [X] send comment
 - [ ] view quastions
 - [ ] enable comments / disable comments
 
